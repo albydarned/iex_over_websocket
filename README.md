@@ -1,21 +1,18 @@
-# RemoteShell
+# IEx Over Websockets
+Proof of concept for tunneling the IEx shell over different transports.
 
-**TODO: Add description**
+## Demo
+![Demo Machine broke](demo.gif)
 
-## Installation
+## Try it yourself
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `remote_shell` to your list of dependencies in `mix.exs`:
+* clone repo
+* `mix deps.get`
+* `iex -S mix`
+* point browser to `localhost:4000`
 
-```elixir
-def deps do
-  [
-    {:remote_shell, "~> 0.1.0"}
-  ]
-end
-```
+## What's next?
+I really want to PR the changes i made to the `IEx.Server` and `IEx.Evaluator`
+into Elixir. Will I do it? no probably not.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/remote_shell](https://hexdocs.pm/remote_shell).
-
+I also would like to implement this over MQTT, and maybe AMQP for fun.
