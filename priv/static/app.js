@@ -21,18 +21,22 @@ socket.onmessage = function(event) {
   console.log(event.data);
   message = JSON.parse(event.data);
 
-  switch(message.type) {
-    case "puts": {
+  switch(message.kind) {
+    case "put_chars": {
       var html = ansiUp.ansi_to_html(message.data);
       var doc = document.getElementById("puts");
       var data = document.createElement("div");
       data.innerHTML = html;
       doc.appendChild(data);
+      socket.send(JSON.stringify({kind: "put_chars", data: "ok"}))
     }
-    case "gets": {
+    case "get_line": {
       var text = ansiUp.ansi_to_text(message.data);
       var doc = document.getElementById("gets");
       doc.innerHTML = text;
+    }
+    case "get_geometry": {
+      // socket.send(JSON.stringify({kind: "get_geometry", data: 80}))
     }
   }
 }
@@ -61,7 +65,7 @@ input.addEventListener("keyup", function(event) {
     div.innerHTML = document.getElementById("gets").innerHTML + " " + input.value;
     doc.appendChild(div);
 
-    data = JSON.stringify({type: "gets", data: input.value});
+    data = JSON.stringify({kind: "get_line", data: input.value});
 
     cmdHistory.push(input.value);
     cmdHistoryIndex = 0;
