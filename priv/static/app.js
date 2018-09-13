@@ -79,4 +79,6 @@ input.addEventListener("keyup", function(event) {
   }
 });
 
+document.getElementById("gets_input").focus();
+
 Window["shell_socket"] = socket;

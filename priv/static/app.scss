@@ -1,34 +1,45 @@
+$prompt-width: 75px;
+$gets-height: 25px;
+$adjust: 2px;
+
+// Adjust input
+$input-width-adjust: $prompt-width + $adjust;
+$input-height-adjust: $gets-height - $adjust;
+
 body {
   background: black;
   color: #FFF;
   font: 1.3rem Inconsolata, monospace;
   font-size: 12pt;
-
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
-$prompt-width: 75px;
-$gets-height: 25px;
-
 #gets_div {
-  width: 100%;
+  display: inline;
   height: $gets-height;
+  width: 100%;
 
   #gets {
+    background: none;
+    clear:both;
     float: left;
-    width: $prompt-width;
     height: $gets-height;
     line-height: $gets-height;
+    width: $prompt-width;
   }
   #gets_input {
-    float: left;
-    width: calc(100% - 77px);
-    height: $gets-height;
     background: none;
     border: none;
-    color: green;
+    color: #FFF;
     font: 1.3rem Inconsolata, monospace;
     font-size: 12pt;
+    height: $gets-height - 2px;
+    width: calc(100% - 77px);
+
+    &:focus {
+      outline-color: transparent;
+      outline-style: none;
+    }
   }
 }
