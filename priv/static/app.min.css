@@ -1,0 +1,1 @@
+body{background:black;color:#FFF;font:1.3rem Inconsolata, monospace;font-size:12pt;margin:0;padding:0}#gets_div{width:100%;height:25px}#gets_div #gets{float:left;width:75px;height:25px;line-height:25px}#gets_div #gets_input{float:left;width:calc(100% - 77px);height:25px;background:none;border:none;color:green;font:1.3rem Inconsolata, monospace;font-size:12pt}

@@ -1,0 +1,34 @@
+body {
+  background: black;
+  color: #FFF;
+  font: 1.3rem Inconsolata, monospace;
+  font-size: 12pt;
+
+  margin: 0;
+  padding: 0;
+}
+
+$prompt-width: 75px;
+$gets-height: 25px;
+
+#gets_div {
+  width: 100%;
+  height: $gets-height;
+
+  #gets {
+    float: left;
+    width: $prompt-width;
+    height: $gets-height;
+    line-height: $gets-height;
+  }
+  #gets_input {
+    float: left;
+    width: calc(100% - 77px);
+    height: $gets-height;
+    background: none;
+    border: none;
+    color: green;
+    font: 1.3rem Inconsolata, monospace;
+    font-size: 12pt;
+  }
+}
